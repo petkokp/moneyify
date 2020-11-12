@@ -1,0 +1,19 @@
+.contact {
+    color: white;
+    position: relative;
+    bottom: 20px;
+    left: 7px;
+}
+
+.btn btn-link btn-neutral {
+    display: flex;
+    align-content: center;
+}
+
+.talking {
+    position: relative;
+	max-width: 410px;
+	top: 30px;
+	left: 330px;
+}
+
