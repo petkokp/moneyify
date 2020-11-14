@@ -1,0 +1,10 @@
+div {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.field {
+    height: 35px;
+    
+}

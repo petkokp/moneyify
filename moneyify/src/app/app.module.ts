@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { BudgetMainComponent } from './budget-main/budget-main.component';
 import { LearningComponent } from './learning/learning.component';
+import { BudgetAddItemFormComponent } from './budget-add-item-form/budget-add-item-form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LearningComponent } from './learning/learning.component';
     FooterComponent,
     HomeComponent,
     BudgetMainComponent,
-    LearningComponent
+    LearningComponent,
+    BudgetAddItemFormComponent
   ],
   imports: [
     BrowserModule,
