@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { BudgetMainComponent } from './budget-main/budget-main.component';
 import { LearningComponent } from './learning/learning.component';
 import { BudgetAddItemFormComponent } from './budget-add-item-form/budget-add-item-form.component';
+import { BudgetItemListComponent } from './budget-item-list/budget-item-list.component';
+import { BudgetItemCardComponent } from './budget-item-list/budget-item-card/budget-item-card.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { BudgetAddItemFormComponent } from './budget-add-item-form/budget-add-it
     HomeComponent,
     BudgetMainComponent,
     LearningComponent,
-    BudgetAddItemFormComponent
+    BudgetAddItemFormComponent,
+    BudgetItemListComponent,
+    BudgetItemCardComponent
   ],
   imports: [
     BrowserModule,
