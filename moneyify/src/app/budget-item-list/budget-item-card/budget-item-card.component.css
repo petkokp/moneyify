@@ -4,22 +4,19 @@
     position: relative;
 }
     
-.x-icon-button {
+.root .x-icon-button {
     position: absolute;
     height: 34px;
     width: 34px;
     border-radius: 50%;
-    background: blue;
-    background-image: url('../../../assets/delete-icon.png');
+    background: black;
+    background-image: url('../../../assets/delete_icon.svg');
     background-repeat: no-repeat;
     background-position: center;
-    right: -17px; 
+    right: -17px;
     top: -17px;
-    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
-    transform: scale(0);
-    opacity: 0;
-    cursor: pointer;
 }
+
 
 .budget-item {
     display: flex;
