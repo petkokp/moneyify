@@ -8,10 +8,12 @@ import { BudgetEditItemComponent } from '../budget-edit-item/budget-edit-item.co
   templateUrl: './budget-item-list.component.html',
   styleUrls: ['./budget-item-list.component.css']
 })
+
 export class BudgetItemListComponent implements OnInit {
 
   @Input() budgetItems: BudgetItem[];
   @Output() delete: EventEmitter<BudgetItem> = new EventEmitter<BudgetItem>();
+  @Output() update: EventEmitter<UpdateEvent> = new EventEmitter<UpdateEvent>();
 
   constructor(public dialog: MatDialog) { }
 
@@ -30,9 +32,16 @@ export class BudgetItemListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.budgetItems[this.budgetItems.indexOf(item)] = result;
+        this.update.emit({
+          old: item,
+          new: result
+        });
       }
     })
   }
+}
 
+export interface UpdateEvent {
+  old: BudgetItem;
+  new: BudgetItem;
 }

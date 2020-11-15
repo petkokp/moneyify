@@ -17,7 +17,7 @@ export class BudgetEditItemComponent implements OnInit {
   }
 
   onSubmitted(updatedItem: BudgetItem) {
-
+    this.dialogRef.close(updatedItem);
   }
 
 }
