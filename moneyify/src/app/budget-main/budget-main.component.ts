@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BudgetItem } from 'src/shared/models/budget-item.module';
+import { BudgetItem } from 'src/shared/models/budget-item.model';
 
 @Component({
   selector: 'app-budget-main',

@@ -13,6 +13,11 @@ import { LearningComponent } from './learning/learning.component';
 import { BudgetAddItemFormComponent } from './budget-add-item-form/budget-add-item-form.component';
 import { BudgetItemListComponent } from './budget-item-list/budget-item-list.component';
 import { BudgetItemCardComponent } from './budget-item-list/budget-item-card/budget-item-card.component';
+import { BudgetEditItemComponent } from './budget-edit-item/budget-edit-item.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -24,14 +29,18 @@ import { BudgetItemCardComponent } from './budget-item-list/budget-item-card/bud
     LearningComponent,
     BudgetAddItemFormComponent,
     BudgetItemListComponent,
-    BudgetItemCardComponent
+    BudgetItemCardComponent,
+    BudgetEditItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
+  entryComponents: [BudgetEditItemComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
