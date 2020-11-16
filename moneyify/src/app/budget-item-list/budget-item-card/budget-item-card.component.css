@@ -17,11 +17,11 @@
     top: -17px;
 }
 
-
 .budget-item {
     display: flex;
     width: 100%;
-    background-color: lightgrey;
+    min-width: 200px;
+    background-color: #F0F0F0;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
@@ -39,10 +39,13 @@
 .amount {
     padding: 5px;
     border-radius: 3px;
+    min-width: 10px;
 }
 
 .expense p {
-    color: red;
+    display: flex;
+    text-align: center;
+    color: black;
 }
 
 .expense .amount {
@@ -50,7 +53,7 @@
 }
 
 .income p {
-    color: green;
+    color: black;
 }
 
 .income .amount {

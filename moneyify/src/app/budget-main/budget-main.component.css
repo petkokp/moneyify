@@ -48,3 +48,11 @@
 .green {
     color: green;
 }
+
+#balance {
+    background-color: white;
+    min-width: 50px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+}
