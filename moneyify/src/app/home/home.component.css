@@ -1,5 +1,7 @@
 .contact {
-    color: white;
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
     position: relative;
     bottom: 20px;
     left: 7px;
@@ -19,6 +21,7 @@
 
 #title {
     font-size: 60px;
+    line-height: normal;
 }
 
 p, .mt-4 {
@@ -27,4 +30,18 @@ p, .mt-4 {
 
 #list {
     font-size: 20px;
+}
+
+#start {
+    color: white;
+}
+
+#start:hover {
+    background-color: white;
+    color: purple;
+}
+
+#contacts {
+    background-image: none;
+    background-color: #F5F5F5;
 }
