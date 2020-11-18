@@ -21,10 +21,49 @@
     margin: auto;
 }
 
-.img-fluid {
-    height: 400px;
-}
-
 .row {
     padding: 120px;
+}
+
+.title {
+    line-height: normal;
+    font-size: 50px;
+}
+
+.pt-5 {
+    font-size: 35px;
+}
+
+.py-1, .py-2 {
+    font-size: 25px;
+}
+
+.col-md-5 {
+    margin: auto;
+}
+
+.col-md-7 {
+    text-align: center;
+    margin: auto;
+}
+
+.img-first {
+    width: 100%;
+}
+
+.img-div {
+    display: flex;
+    justify-content: center;
+}
+
+.img-fluid {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+}
+
+.title2 {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
 }
