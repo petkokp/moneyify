@@ -18,6 +18,7 @@ import { BudgetEditItemComponent } from './budget-edit-item/budget-edit-item.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatDialogModule } from '@angular/material/dialog';
+import { TaskViewComponent } from './task-manager/task-view/task-view.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     BudgetAddItemFormComponent,
     BudgetItemListComponent,
     BudgetItemCardComponent,
-    BudgetEditItemComponent
+    BudgetEditItemComponent,
+    TaskViewComponent
   ],
   imports: [
     BrowserModule,
