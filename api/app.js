@@ -11,8 +11,8 @@ app.use(bodyParser.json());
 app.get('/lists', (req, res) => {
     List.find({}).then((lists) => {
         res.send(lists);
-    })
-})
+    });
+});
 
 app.post('/lists', (req, res) => {
     let title = req.body.title;
@@ -22,17 +22,25 @@ app.post('/lists', (req, res) => {
     });
     newList.save().then((listDoc) => {
         res.send(listDoc);
-    })
+    });
 });
 
 app.patch('/lists/:id', (req, res) => {
-    res.send('Hello world');
-})
+    List.findOneAndUpdate({ _id: req.params.id }, {
+        $set: req.body
+    }).then(() => {
+        res.sendStatus(200);
+    });
+});
 
 app.delete('/lists/:id', (req, res) => {
-    res.send('Hello world');
-})
+    List.findOneAndRemove({ 
+        _id: req.params.id
+     }).then((removedListDoc) => {
+        res.send(removedListDoc);
+     });
+});
 
 app.listen(3004, () => {
     console.log('Listening on port 3004...');
-})
+});
