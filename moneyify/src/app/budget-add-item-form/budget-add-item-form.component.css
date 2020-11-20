@@ -18,5 +18,11 @@ input {
     background-color: purple;
     color: white;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: white;
+    color: purple;
 }
 

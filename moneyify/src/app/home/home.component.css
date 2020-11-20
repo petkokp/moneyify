@@ -45,3 +45,8 @@ p, .mt-4 {
     background-image: none;
     background-color: #F5F5F5;
 }
+
+.btn:hover {
+    color: white;
+    background-color: purple;
+}
