@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TaskViewComponent } from './task-manager/task-view/task-view.component';
 import { NewListComponent } from './task-manager/new-list/new-list.component';
+import { NewTaskComponent } from './task-manager/new-task/new-task.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NewListComponent } from './task-manager/new-list/new-list.component';
     BudgetItemCardComponent,
     BudgetEditItemComponent,
     TaskViewComponent,
-    NewListComponent
+    NewListComponent,
+    NewTaskComponent
   ],
   imports: [
     BrowserModule,
