@@ -145,6 +145,7 @@
 }
 
 .task-list-container {
+    position: relative;
     display: flex;
     flex-grow: 1;
     background-color: purple;
@@ -228,4 +229,21 @@
 
 .text-white {
     line-height: normal;
+}
+
+.plus-button {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    background: indigo;
+    color: white;
+    font-size: 40px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.plus-button:hover {
+    background: white;
+    color: indigo;
 }
