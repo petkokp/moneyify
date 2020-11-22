@@ -12,6 +12,7 @@ const routes: Routes = [
     { path: 'learning', component: LearningComponent },
     { path: 'task-manager', component: TaskViewComponent },
     { path: 'task-manager/new-list', component: NewListComponent },
+    { path: 'task-manager/:listId', component: TaskViewComponent },
   ]
 
   @NgModule({

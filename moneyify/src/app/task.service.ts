@@ -9,6 +9,14 @@ export class TaskService {
   constructor(private webReqService: WebRequestService) { }
 
   createList(title: string) {
-    return this.webReqService.post('lists', { title });
+    return this.webReqService.post('task-manager', { title });
+  }
+
+  getLists() {
+    return this.webReqService.get('lists');
+  }
+
+  getTasks(listId: string) {
+    return this.webReqService.get(`lists/${listId}/tasks`);
   }
 }

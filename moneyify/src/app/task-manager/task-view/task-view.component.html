@@ -19,18 +19,17 @@
             </h1>
 
             <div class="list-menu">
-                <a id="is-active" class="list-menu-item">
+                <a id="is-active" class="list-menu-item is-active">
                     <p>List 1</p>
                 </a>
-                <a class="list-menu-item">
-                    <p>List 1</p>
+
+                <a class="list-menu-item" *ngFor="let list of lists" [routerLink]="['/lists', list._id]" routerLinkActive="is-active">
+                  <p>{{ list.title }}</p>
                 </a>
-                <a class="list-menu-item">
-                    <p>List 1</p>
-                </a>
+
             </div>
 
-            <button id="is-primary" class="button" (click)="createNewList()">+ New List</button>
+            <button id="is-primary" class="button" routerLink="/task-manager/new-list">+ New List</button>
 
         </div>
 
@@ -39,15 +38,10 @@
               Tasks
           </h1>
 
-          <div class="task">
-              <p>Testscheee</p>
+          <div class="task" *ngFor="let task of tasks">
+              <p>{{ task.title }}</p>
           </div>
-          <div class="task">
-            <p id="complete">Testscheee</p>
-        </div>
-        <div class="task">
-            <p>Testscheee</p>
-        </div>
+          
       </div>
     </div>
 </div>

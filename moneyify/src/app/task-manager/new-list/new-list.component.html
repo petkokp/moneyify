@@ -5,13 +5,16 @@
         </h1>
         <div class="field">
             <p class="control">
-                <input class="input" type="text" placeholder="Find a repository">
+                <input #listTitleInput class="input" type="text" placeholder="Enter list name">
             </p>
             <p class="control">
-                <a class="create">
+                <a class="create" (click)="createList(listTitleInput.value)">
                     Create
                 </a>
             </p>
         </div>
+
+        <button routerLink="/task-manager" class="button">Back</button>
+
     </div>
 </div>

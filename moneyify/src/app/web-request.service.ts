@@ -9,7 +9,7 @@ export class WebRequestService {
   readonly ROOT_URL;
 
   constructor(private http: HttpClient) {
-    this.ROOT_URL = 'http://localhost:3000/task-manager';
+    this.ROOT_URL = 'http://localhost:4200';
    }
 
   get(uri: string) {
