@@ -15,13 +15,13 @@ app.use(function(req, res, next) {
     next();
   });
 
-app.get('/task-manager', (req, res) => {
+app.get('/lists', (req, res) => {
     List.find({}).then((lists) => {
         res.send(lists);
     });
 });
 
-app.post('/task-manager', (req, res) => {
+app.post('/lists', (req, res) => {
     let title = req.body.title;
 
     let newList = new List({
@@ -32,7 +32,7 @@ app.post('/task-manager', (req, res) => {
     });
 });
 
-app.patch('/task-manager/:id', (req, res) => {
+app.patch('/lists/:id', (req, res) => {
     List.findOneAndUpdate({ _id: req.params.id }, {
         $set: req.body
     }).then(() => {
@@ -40,7 +40,7 @@ app.patch('/task-manager/:id', (req, res) => {
     });
 });
 
-app.delete('/task-manager/:id', (req, res) => {
+app.delete('/lists/:id', (req, res) => {
     List.findOneAndRemove({ 
         _id: req.params.id
      }).then((removedListDoc) => {
@@ -49,7 +49,7 @@ app.delete('/task-manager/:id', (req, res) => {
 });
 
 
-app.get('/task-manager/:listId/tasks', (req, res) => {
+app.get('/lists/:listId/tasks', (req, res) => {
     Task.find({
         _listId: req.params.listId
     }).then((tasks) => {
@@ -57,7 +57,7 @@ app.get('/task-manager/:listId/tasks', (req, res) => {
     });
 });
 
-app.post('/task-manager/:listId/tasks', (req, res) => {
+app.post('/lists/:listId/tasks', (req, res) => {
     let newTask = new Task({
         title: req.body.title,
         _listId: req.params.listId
@@ -67,7 +67,7 @@ app.post('/task-manager/:listId/tasks', (req, res) => {
     });
 });
 
-app.patch('/task-manager/:listId/tasks/:taskId', (req, res) => {
+app.patch('/lists/:listId/tasks/:taskId', (req, res) => {
     Task.findOneAndUpdate({ 
         _id: req.params.taskId,
         _listId: req.params.listId
@@ -79,7 +79,7 @@ app.patch('/task-manager/:listId/tasks/:taskId', (req, res) => {
     });
 });
 
-app.delete('/task-manager/:listId/tasks/:taskId', (req, res) => {
+app.delete('/lists/:listId/tasks/:taskId', (req, res) => {
     Task.findOneAndRemove({ 
         _id: req.params.taskId,
         _listId: req.params.listId
@@ -88,6 +88,6 @@ app.delete('/task-manager/:listId/tasks/:taskId', (req, res) => {
     });
 });
 
-app.listen(3001, () => {
+app.listen(3000, () => {
     console.log('Listening on port 3000...');
 });

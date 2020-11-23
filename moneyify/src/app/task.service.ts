@@ -14,7 +14,7 @@ export class TaskService {
   }
 
   createList(title: string) {
-    return this.webReqService.post('task-manager', { title });
+    return this.webReqService.post('lists', { title });
   }
 
   getTasks(listId: string) {
@@ -22,11 +22,11 @@ export class TaskService {
   }
 
   createTask(title: string, listId: string) {
-    return this.webReqService.post(`task-manager/${listId}/tasks`, { title });
+    return this.webReqService.post(`lists/${listId}/tasks`, { title });
   }
 
   complete(task: Task) {
-    return this.webReqService.patch(`task-manager/${task._listId}/tasks/${task._id}`, {
+    return this.webReqService.patch(`lists/${task._listId}/tasks/${task._id}`, {
       completed: !task.completed
     });
   }
