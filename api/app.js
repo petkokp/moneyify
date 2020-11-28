@@ -4,7 +4,7 @@ const { mongoose } = require('./db/mongoose');
 
 const bodyParser = require('body-parser');
 
-const { List, Task } = require('./db/models');
+const { List, Task, User } = require('./db/models');
 
 app.use(bodyParser.json());
 
@@ -87,6 +87,30 @@ app.delete('/lists/:listId/tasks/:taskId', (req, res) => {
         res.send(removedTaskDoc);
     });
 });
+
+/* ROUTES FOR USER */
+
+app.post('/users', (req, res) => {
+
+    let body = req.body;
+    let newUser = new User(body);
+
+    newUser.save().then(() => {
+        return newUser.createSession();
+    }).then((refreshToken) => {
+        return newUser.generateAccessAuthToken().then((accessToken) => {
+            return { accessToken, refreshToken }
+        });
+    }).then((authTokens) => {
+        res
+            .header('x-refresh-token', authTokens.refreshToken)
+            .header('x-access-token', authTokens.accessToken)
+            .send(newUser);
+    }).catch((e) => {
+        res.status(400).send(e);
+    })
+})
+
 
 app.listen(3000, () => {
     console.log('Listening on port 3000...');
