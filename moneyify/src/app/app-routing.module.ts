@@ -7,6 +7,7 @@ import { TaskViewComponent } from './task-manager/task-view/task-view.component'
 import { NewListComponent } from './task-manager/new-list/new-list.component';
 import { NewTaskComponent } from './task-manager/new-task/new-task.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { RegisterPageComponent } from './register-page/register-page.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
     { path: 'learning', component: LearningComponent },
     { path: 'task-manager', component: TaskViewComponent },
     { path: 'login', component: LoginPageComponent },
+    { path: 'register', component: RegisterPageComponent },
     { path: 'task-manager/new-list', component: NewListComponent },
     { path: 'task-manager/:listId', component: TaskViewComponent },
     { path: 'task-manager/:listId/new-task', component: NewTaskComponent },

@@ -22,7 +22,8 @@ import { TaskViewComponent } from './task-manager/task-view/task-view.component'
 import { NewListComponent } from './task-manager/new-list/new-list.component';
 import { NewTaskComponent } from './task-manager/new-task/new-task.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { Webreqinterceptor } from './web-req.interceptor.service';
+import { WebReqInterceptor } from './web-req.interceptor.service';
+import { RegisterPageComponent } from './register-page/register-page.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { Webreqinterceptor } from './web-req.interceptor.service';
     TaskViewComponent,
     NewListComponent,
     NewTaskComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    RegisterPageComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,7 @@ import { Webreqinterceptor } from './web-req.interceptor.service';
     HttpClientModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: Webreqinterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: WebReqInterceptor, multi: true }
   ],
   entryComponents: [BudgetEditItemComponent],
   bootstrap: [AppComponent]
