@@ -1,0 +1,76 @@
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+}
+
+.modal-box {
+    
+    min-height: 300px;
+    width: 100%;
+    max-width: 800px;
+    background: purple;
+    border-radius: 5px;
+    padding: 35px;
+    
+}
+
+.title {
+    color: white;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    background: darkviolet;
+    padding: 20px;
+}
+
+.control {
+    color: white;
+}
+
+.create {
+    padding: 15px;
+    border-radius: 5px;
+    background: indigo;
+    cursor: pointer;
+    font-size: 30px;
+    display: flex;
+}
+
+.control .create:hover {
+    color: indigo;
+    background: white;
+}
+
+.field {
+    display: flex;
+    padding: 10px;
+    margin: 100px;
+}
+
+.input {
+    border-radius: 5px;
+    display: flex;
+    font-size: 30px;
+    padding: 7px;   
+}
+
+.button {
+    padding: 6px;
+    color: white;
+    min-width: 100px;
+    border-radius: 5px;
+    background: indigo;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.button:hover {
+    background: white;
+    color: indigo;
+}

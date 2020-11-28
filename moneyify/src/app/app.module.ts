@@ -25,6 +25,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { WebReqInterceptor } from './web-req.interceptor.service';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { EditListComponent } from './task-manager/edit-list/edit-list.component';
+import { EditTaskComponent } from './task-manager/edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { EditListComponent } from './task-manager/edit-list/edit-list.component'
     NewTaskComponent,
     LoginPageComponent,
     RegisterPageComponent,
-    EditListComponent
+    EditListComponent,
+    EditTaskComponent
   ],
   imports: [
     BrowserModule,

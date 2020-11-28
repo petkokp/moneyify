@@ -9,6 +9,7 @@ import { NewTaskComponent } from './task-manager/new-task/new-task.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { EditListComponent } from './task-manager/edit-list/edit-list.component';
+import { EditTaskComponent } from './task-manager/edit-task/edit-task.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
     { path: 'task-manager/:listId', component: TaskViewComponent },
     { path: 'task-manager/edit-list/:listId', component: EditListComponent },
     { path: 'task-manager/:listId/new-task', component: NewTaskComponent },
+    { path: 'task-manager/:listId/edit-task/:taskId', component: EditTaskComponent },
   ]
 
   @NgModule({

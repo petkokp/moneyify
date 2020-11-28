@@ -51,7 +51,21 @@
             </div>
 
             <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }">
-              <p>{{ task.title }}</p>
+              <div class="task-text">
+                <p>{{ task.title }}</p>
+              </div>
+              <div class="task-buttons">
+                <button class="button-trash" (click)="onTaskDeleteClick(task._id)">
+                  <div class="icon">
+                    <img class="trash" src="../../../assets/images/trash.png">
+                  </div>
+                </button>
+                <button class="button-trash" [routerLink]="['/task-manager', selectedListId, 'edit-task', task._id]">
+                  <div class="icon">
+                    <img class="trash" src="../../../assets/images/edit.svg.png">
+                  </div>
+                </button>
+              </div>
             </div>
 
             <h1 class="title" *ngIf="tasks.length === 0">There are no tasks</h1>
