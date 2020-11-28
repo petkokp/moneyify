@@ -16,9 +16,18 @@ export class AuthService {
     return this.webService.login(email, password).pipe(
       shareReplay(),
       tap((res: HttpResponse<any>) => {
-        // the auth tokens will be in the header of this response
         this.setSession(res.body._id, res.headers.get('x-access-token'), res.headers.get('x-refresh-token'));
         console.log("LOGGED IN!");
+      })
+    )
+  }
+
+  register(email: string, password: string) {
+    return this.webService.register(email, password).pipe(
+      shareReplay(),
+      tap((res: HttpResponse<any>) => {
+        this.setSession(res.body._id, res.headers.get('x-access-token'), res.headers.get('x-refresh-token'));
+        console.log("Successfully registered and now logged in!");
       })
     )
   }
