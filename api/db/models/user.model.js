@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const _ = require('lodash');
 const jwt = require('jsonwebtoken');
+const crypto = require('crypto');
+const bcrypt = require('bcryptjs');
 
 const jwtSecret = "617776851226641fsdklafjasfakljfsklfjd7148523";
 
@@ -46,5 +48,29 @@ UserSchema.methods.generateAccessAuthToken = function () {
                 reject();
             }
         })
+    })
+}
+
+UserSchema.methods.generateRefreshAuthToken = function () {
+    return new Promise((resolve, reject) => {
+        crypto.randomBytes(64, (err, buf) => {
+            if (!err) {
+                let token = buf.toString('hex');
+
+                return resolve(token);
+            }
+        })
+    })
+}
+
+UserSchema.methods.createSession = function () {
+    let user = this;
+
+    return user.generateRefreshAuthToken().then((refreshToken) => {
+        return saveSessionToDatabase(user, refreshToken);
+    }).then((refreshToken) => {
+        return refreshToken;
+    }).catch((e) => {
+        return Promise.reject('Failed to save session to database.\n' + e);
     })
 }
