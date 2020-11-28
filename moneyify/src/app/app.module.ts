@@ -21,6 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { TaskViewComponent } from './task-manager/task-view/task-view.component';
 import { NewListComponent } from './task-manager/new-list/new-list.component';
 import { NewTaskComponent } from './task-manager/new-task/new-task.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NewTaskComponent } from './task-manager/new-task/new-task.component';
     BudgetEditItemComponent,
     TaskViewComponent,
     NewListComponent,
-    NewTaskComponent
+    NewTaskComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
