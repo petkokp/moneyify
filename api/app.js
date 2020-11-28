@@ -187,6 +187,17 @@ app.post('/users/login', (req, res) => {
     });
 })
 
+/* ACCESS TOKEN ROUTE */
+
+app.get('/users/me/access-token', verifySession, (req, res) => {
+    req.userObject.generateAccessAuthToken().then((accessToken) => {
+        res.header('x-access-token', accessToken).send({ accessToken });
+    }).catch((e) => {
+        res.status(400).send(e);
+    });
+})
+
+
 
 app.listen(3000, () => {
     console.log('Listening on port 3000...');
