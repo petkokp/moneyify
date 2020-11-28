@@ -120,3 +120,21 @@ UserSchema.statics.hasRefreshTokenExpired = (expiresAt) => {
     }
 }
 
+/* MIDDLEWARE */
+
+UserSchema.pre('save', function (next) {
+    let user = this;
+    let costFactor = 10;
+
+    if (user.isModified('password')) {
+        bcrypt.genSalt(costFactor, (err, salt) => {
+            bcrypt.hash(user.password, salt, (err, hash) => {
+                user.password = hash;
+                next();
+            })
+        })
+    } else {
+        next();
+    }
+});
+
