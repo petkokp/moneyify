@@ -74,3 +74,49 @@ UserSchema.methods.createSession = function () {
         return Promise.reject('Failed to save session to database.\n' + e);
     })
 }
+
+/* STATIC MEHODS */ 
+
+UserSchema.statics.getJWTSecret = () => {
+    return jwtSecret;
+}
+
+
+
+UserSchema.statics.findByIdAndToken = function (_id, token) {
+    const User = this;
+
+    return User.findOne({
+        _id,
+        'sessions.token': token
+    });
+}
+
+
+UserSchema.statics.findByCredentials = function (email, password) {
+    let User = this;
+    return User.findOne({ email }).then((user) => {
+        if (!user) return Promise.reject();
+
+        return new Promise((resolve, reject) => {
+            bcrypt.compare(password, user.password, (err, res) => {
+                if (res) {
+                    resolve(user);
+                }
+                else {
+                    reject();
+                }
+            })
+        })
+    })
+}
+
+UserSchema.statics.hasRefreshTokenExpired = (expiresAt) => {
+    let secondsSinceEpoch = Date.now() / 1000;
+    if (expiresAt > secondsSinceEpoch) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
