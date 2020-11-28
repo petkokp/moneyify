@@ -44,7 +44,7 @@
                   <img class="settings" src="../../../assets/settings.svg">
                 </button>
                 <div class="dropdown-content">
-                  <a href="#">Edit</a>
+                  <a [routerLink]="['/task-manager/edit-list', selectedListId]">Edit</a>
                   <a (click)="onDeleteListClick()">Delete</a>
                 </div>
               </div> 
