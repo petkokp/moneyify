@@ -10,7 +10,7 @@ export class WebRequestService {
 
   constructor(private http: HttpClient) {
     this.ROOT_URL = 'http://localhost:3000';
-   }
+  }
 
   get(uri: string) {
     return this.http.get(`${this.ROOT_URL}/${uri}`);
@@ -21,7 +21,7 @@ export class WebRequestService {
   }
 
   patch(uri: string, payload: Object) {
-    return this.http.post(`${this.ROOT_URL}/${uri}`, payload);
+    return this.http.patch(`${this.ROOT_URL}/${uri}`, payload);
   }
 
   delete(uri: string) {
@@ -32,9 +32,9 @@ export class WebRequestService {
     return this.http.post(`${this.ROOT_URL}/users/login`, {
       email,
       password
-    }, { 
-         observe: 'response'
-       });
+    }, {
+        observe: 'response'
+      });
   }
 
 }

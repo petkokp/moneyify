@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -22,6 +22,7 @@ import { TaskViewComponent } from './task-manager/task-view/task-view.component'
 import { NewListComponent } from './task-manager/new-list/new-list.component';
 import { NewTaskComponent } from './task-manager/new-task/new-task.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { Webreqinterceptor } from './web-req.interceptor.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,9 @@ import { LoginPageComponent } from './login-page/login-page.component';
     MatDialogModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: Webreqinterceptor, multi: true }
+  ],
   entryComponents: [BudgetEditItemComponent],
   bootstrap: [AppComponent]
 })
