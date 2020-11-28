@@ -5,9 +5,57 @@
     width: 100%;
     height: 100%;
     padding: 100px;
+    background: magenta;
 }
 
 .register-box {
+    display: grid;
+    background: darkmagenta;
+    padding: 170px;
+    border-radius: 5px;
+    min-width: 1000px;
+    min-height: 700px;
+}
+
+.control {
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.input {
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 50px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.button {
+    border-radius: 5px;
+    padding: 5px;
+    min-width: 100px;
+}
+
+.button:hover {
+    background: purple;
+    color: white;
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+}
+
+.login-box {
     background: magenta;
     padding: 40px;
     border-radius: 5px;
@@ -40,4 +88,23 @@ h1 {
 .button:hover {
     background: purple;
     color: white;
+}
+
+.log {
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
+.link-log {
+    color: magenta;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.link-log:hover {
+    color: white;
+    background: darkviolet;
 }
