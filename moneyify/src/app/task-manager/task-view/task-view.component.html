@@ -35,9 +35,20 @@
 
         <div class="task-list-container">
           <div *ngIf ="tasks">
-            <h1 class="title has-text-primary">
-              Tasks
-            </h1>
+            <div class="top-bar">
+              <h1 class="title">
+                Tasks
+              </h1>
+              <div class="dropdown">
+                <button class="dropbtn">
+                  <img class="settings" src="../../../assets/settings.svg">
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Edit</a>
+                  <a (click)="onDeleteListClick()">Delete</a>
+                </div>
+              </div> 
+            </div>
 
             <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }">
               <p>{{ task.title }}</p>
