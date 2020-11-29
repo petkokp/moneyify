@@ -4,7 +4,6 @@ import { WebRequestService } from './web-request.service';
 import { Router } from '@angular/router';
 import { shareReplay, tap } from 'rxjs/operators';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -12,12 +11,14 @@ export class AuthService {
 
   constructor(private webService: WebRequestService, private router: Router, private http: HttpClient) { }
 
+  isLogged: boolean;
+
   login(email: string, password: string) {
     return this.webService.login(email, password).pipe(
       shareReplay(),
       tap((res: HttpResponse<any>) => {
         this.setSession(res.body._id, res.headers.get('x-access-token'), res.headers.get('x-refresh-token'));
-        console.log("LOGGED IN!");
+        this.isLogged = true;
       })
     )
   }
@@ -28,6 +29,7 @@ export class AuthService {
       tap((res: HttpResponse<any>) => {
         this.setSession(res.body._id, res.headers.get('x-access-token'), res.headers.get('x-refresh-token'));
         console.log("Successfully registered and now logged in!");
+        this.isLogged = true;
       })
     )
   }
@@ -36,6 +38,8 @@ export class AuthService {
     this.removeSession();
 
     this.router.navigate(['/login']);
+
+    this.isLogged = false;
   }
 
   getAccessToken() {
