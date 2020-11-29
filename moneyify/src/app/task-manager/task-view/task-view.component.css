@@ -328,3 +328,7 @@
 .task .task-text {
     flex-grow: 1;
 }
+
+a {
+    cursor: pointer;
+}
