@@ -1,4 +1,4 @@
-<header *ngIf="this.authService.isLogged === true">
+<header *ngIf="authService.loggedIn()">
   <nav class="navbar navbar-expand-md navbar-transparent">
     <div class="container">
       <a class="navbar-brand px-0 py-0" href="#">Moneyify</a>
@@ -17,7 +17,7 @@
   </nav>
 </header>
 
-<header *ngIf="this.authService.isLogged !== true">
+<header *ngIf="!authService.loggedIn()">
   <nav class="navbar navbar-expand-md navbar-transparent">
     <div class="container">
       <a class="navbar-brand px-0 py-0" href="#">Moneyify</a>

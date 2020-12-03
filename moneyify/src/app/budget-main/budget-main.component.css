@@ -75,3 +75,29 @@
 .info {
     padding: 12px;
 }
+
+.disclaimer {
+    color: white;
+    text-align: center;
+}
+
+.disclaimer a {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.disclaimer a:hover {
+    color: purple;
+    background-color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+strong {
+    background-color: lightgray;
+    padding: 5px;
+    border-radius: 5px;
+}

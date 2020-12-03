@@ -332,3 +332,9 @@
 a {
     cursor: pointer;
 }
+
+strong {
+    background-color: lightgray;
+    padding: 5px;
+    border-radius: 5px;
+}

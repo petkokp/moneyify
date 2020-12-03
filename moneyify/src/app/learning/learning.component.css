@@ -89,3 +89,16 @@
     color: purple;
     background-color: lightpink;
   }
+  
+video {
+    display: flex;
+    margin: 0 auto; 
+    width: 600px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.video {
+    text-align: center;
+    padding: 5px;
+}
