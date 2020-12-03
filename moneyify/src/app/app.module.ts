@@ -27,6 +27,7 @@ import { RegisterPageComponent } from './register-page/register-page.component';
 import { EditListComponent } from './task-manager/edit-list/edit-list.component';
 import { EditTaskComponent } from './task-manager/edit-task/edit-task.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
     HttpClientModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: WebReqInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: WebReqInterceptor, multi: true },
+    AuthGuard
   ],
   entryComponents: [BudgetEditItemComponent],
   bootstrap: [AppComponent]

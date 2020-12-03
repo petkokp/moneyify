@@ -11,20 +11,21 @@ import { RegisterPageComponent } from './register-page/register-page.component';
 import { EditListComponent } from './task-manager/edit-list/edit-list.component';
 import { EditTaskComponent } from './task-manager/edit-task/edit-task.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'budget-calculator', component: BudgetMainComponent },
-    { path: 'learning', component: LearningComponent },
-    { path: 'task-manager', component: TaskViewComponent },
-    { path: 'chatbot', component: ChatbotComponent },
+    { path: 'budget-calculator', component: BudgetMainComponent, canActivate: [AuthGuard] },
+    { path: 'learning', component: LearningComponent, canActivate: [AuthGuard] },
+    { path: 'task-manager', component: TaskViewComponent, canActivate: [AuthGuard] },
+    { path: 'chatbot', component: ChatbotComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginPageComponent },
     { path: 'register', component: RegisterPageComponent },
-    { path: 'task-manager/new-list', component: NewListComponent },
-    { path: 'task-manager/:listId', component: TaskViewComponent },
-    { path: 'task-manager/edit-list/:listId', component: EditListComponent },
-    { path: 'task-manager/:listId/new-task', component: NewTaskComponent },
-    { path: 'task-manager/:listId/edit-task/:taskId', component: EditTaskComponent },
+    { path: 'task-manager/new-list', component: NewListComponent, canActivate: [AuthGuard] },
+    { path: 'task-manager/:listId', component: TaskViewComponent, canActivate: [AuthGuard] },
+    { path: 'task-manager/edit-list/:listId', component: EditListComponent, canActivate: [AuthGuard] },
+    { path: 'task-manager/:listId/new-task', component: NewTaskComponent, canActivate: [AuthGuard] },
+    { path: 'task-manager/:listId/edit-task/:taskId', component: EditTaskComponent, canActivate: [AuthGuard] },
   ]
 
   @NgModule({

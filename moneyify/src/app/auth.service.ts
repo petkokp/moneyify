@@ -83,4 +83,9 @@ export class AuthService {
       })
     )
   }
+
+  loggedIn() {
+    return !!localStorage.getItem('user-id');
+  }
+
 }
