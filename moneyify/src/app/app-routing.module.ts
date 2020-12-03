@@ -10,12 +10,14 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { EditListComponent } from './task-manager/edit-list/edit-list.component';
 import { EditTaskComponent } from './task-manager/edit-task/edit-task.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'budget-calculator', component: BudgetMainComponent },
     { path: 'learning', component: LearningComponent },
     { path: 'task-manager', component: TaskViewComponent },
+    { path: 'chatbot', component: ChatbotComponent },
     { path: 'login', component: LoginPageComponent },
     { path: 'register', component: RegisterPageComponent },
     { path: 'task-manager/new-list', component: NewListComponent },
