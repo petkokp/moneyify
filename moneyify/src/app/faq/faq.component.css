@@ -93,3 +93,19 @@ input:checked ~ article.ac-small {
 input:checked ~ article.ac-large {
     height: 300px;
 }
+
+.title {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 50px;
+}
+
+.disclaimer {
+    text-align: center;
+}
+
+#disclaimer {
+    color: white;
+    text-decoration: none;
+}
