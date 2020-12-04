@@ -26,8 +26,8 @@ import { WebReqInterceptor } from './web-req.interceptor.service';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { EditListComponent } from './task-manager/edit-list/edit-list.component';
 import { EditTaskComponent } from './task-manager/edit-task/edit-task.component';
-import { ChatbotComponent } from './chatbot/chatbot.component';
 import { AuthGuard } from './auth.guard';
+import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,7 @@ import { AuthGuard } from './auth.guard';
     RegisterPageComponent,
     EditListComponent,
     EditTaskComponent,
-    ChatbotComponent
+    FaqComponent
   ],
   imports: [
     BrowserModule,

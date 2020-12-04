@@ -9,7 +9,6 @@ const { List, Task, User } = require('./db/models');
 
 const jwt = require('jsonwebtoken');
 
-
 /* MIDDLEWARE  */
 
 app.use(bodyParser.json());
