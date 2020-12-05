@@ -8,6 +8,7 @@
 
 .body {
     background-image: url('../../assets/images/background.png');
+    text-align: center;
 }
 
 .faq-block {
@@ -24,7 +25,7 @@
 }
 
 label {
-    padding: 5px 20px;
+    padding: 5px 25px;
     position: relative;
     z-index: 20;
     display: block;
@@ -34,16 +35,18 @@ label {
     border-radius: 3px;
     line-height: 40px;
     font-size: 16px;
-    background-color: #81a2ff;
+    background-color: purple;
+    text-align: center;
 }
 
 label:hover {
-    background-color: #5076d2;
+    background-color: lightpink;
+    color: purple;
 }
 
 input:checked + label,
 input:checked + label:hover {
-    background-color: #5076d2;
+    background-color: purple;
     color: #fff;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -54,7 +57,7 @@ input {
 }
 
 article {
-    background-color: #81a2ff;
+    background-color: lightpink;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     margin-top: -2px;
@@ -65,13 +68,20 @@ article {
     transition: height 0.3s ease;
     display: flex;
     align-items: center;
+    color: purple;
+    text-align: center;
 }
 
 p {
-    color: #fff;
+    color: purple;
     line-height: 23px;
     font-size: 16px;
     padding: 20px;
+    text-align: center;
+}
+
+a {
+    text-align: center;
 }
 
 input:checked ~ article {
@@ -103,9 +113,46 @@ input:checked ~ article.ac-large {
 
 .disclaimer {
     text-align: center;
+    color: white;
 }
 
 #disclaimer {
     color: white;
     text-decoration: none;
+}
+
+.image {
+    text-align: center;
+}
+
+.faq {
+    text-decoration: none;
+}
+
+.bottom {
+    padding: 70px;
+}
+
+.text {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.contacts {
+    background-color: purple;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.contacts:hover {
+    background-color: lightpink;
+    color: purple;
+}
+
+img { 
+    margin: 20px;
 }
