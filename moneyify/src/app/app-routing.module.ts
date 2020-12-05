@@ -12,6 +12,7 @@ import { EditListComponent } from './task-manager/edit-list/edit-list.component'
 import { EditTaskComponent } from './task-manager/edit-task/edit-task.component';
 import { AuthGuard } from './auth.guard';
 import { FaqComponent } from './faq/faq.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
     { path: 'task-manager/edit-list/:listId', component: EditListComponent, canActivate: [AuthGuard] },
     { path: 'task-manager/:listId/new-task', component: NewTaskComponent, canActivate: [AuthGuard] },
     { path: 'task-manager/:listId/edit-task/:taskId', component: EditTaskComponent, canActivate: [AuthGuard] },
+    { path: '**', component: PageNotFoundComponent }
   ]
 
   @NgModule({

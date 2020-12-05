@@ -28,6 +28,7 @@ import { EditListComponent } from './task-manager/edit-list/edit-list.component'
 import { EditTaskComponent } from './task-manager/edit-task/edit-task.component';
 import { AuthGuard } from './auth.guard';
 import { FaqComponent } from './faq/faq.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { FaqComponent } from './faq/faq.component';
     RegisterPageComponent,
     EditListComponent,
     EditTaskComponent,
-    FaqComponent
+    FaqComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
