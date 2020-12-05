@@ -1,6 +1,12 @@
-# AngularSoftuni
+# Moneyify
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+This is a course project for SoftUni.
+
+The project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+
+## Install packages
+
+Run `npm install` to install the required packages.
 
 ## Development server
 
