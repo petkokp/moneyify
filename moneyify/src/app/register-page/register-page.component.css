@@ -108,3 +108,19 @@ h1 {
     color: white;
     background: darkviolet;
 }
+
+.email-validation {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.password-validation {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}

@@ -3,9 +3,10 @@
         <h1>Register</h1>
         <div class="field">
             <p class="control">
-                <input #emailInput class="input" type="email" placeholder="Email">
-
+                <input #emailInput class="input" type="email" placeholder="Email" >
             </p>
+            <p class="email-validation" *ngIf="!emailInput.value">Please enter email!</p>
+            <p class="email-validation" *ngIf="emailInput.value.length < 8 && emailInput.value.length >= 1">The email must be atleast 8 symbols long!</p>
         </div>
         <div class="field">
             <p class="control">
@@ -14,6 +15,8 @@
                     <i class="fas"></i>
                 </span>
             </p>
+            <p class="email-validation" *ngIf="!pwInput.value">Please enter password!</p>
+            <p class="password-validation" *ngIf="pwInput.value.length < 8 && pwInput.value.length >= 1">The password must be atleast 8 symbols long!</p>
         </div>
         <div class="field">
             <p class="control">

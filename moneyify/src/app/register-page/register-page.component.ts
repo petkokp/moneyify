@@ -10,6 +10,8 @@ import { AuthService } from '../auth.service';
 })
 export class RegisterPageComponent implements OnInit {
 
+  isValid: boolean = true;
+
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {

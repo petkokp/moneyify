@@ -29,7 +29,6 @@ export class AuthService {
       tap((res: HttpResponse<any>) => {
         this.setSession(res.body._id, res.headers.get('x-access-token'), res.headers.get('x-refresh-token'));
         console.log("Successfully registered and now logged in!");
-        this.isLogged = true;
       })
     )
   }
@@ -38,8 +37,6 @@ export class AuthService {
     this.removeSession();
 
     this.router.navigate(['/login']);
-
-    this.isLogged = false;
   }
 
   getAccessToken() {

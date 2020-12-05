@@ -4,8 +4,8 @@
         <div class="field">
             <p class="control">
                 <input #emailInput class="input" type="email" placeholder="Email">
-
             </p>
+            <p id="email-validation" class="email-validation" *ngIf="emailInput.value.length < 8 && emailInput.value.length >= 1">The email is invalid!</p>
         </div>
         <div class="field">
             <p class="control">
@@ -14,6 +14,7 @@
                     <i class="fas"></i>
                 </span>
             </p>
+            <p id="password-validation" class="email-validation" *ngIf="pwInput.value.length < 8 && pwInput.value.length >= 1">The password is invalid!</p>
         </div>
         <div class="field">
             <p class="control">
