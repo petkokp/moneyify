@@ -13,23 +13,23 @@ export class WebRequestService {
   }
 
   get(uri: string) {
-    return this.http.get(`${this.ROOT_URL}/${uri}`);
+    return this.http.get(`${this.ROOT_URL}${uri}`);
   }
 
   post(uri: string, payload: Object) {
-    return this.http.post(`${this.ROOT_URL}/${uri}`, payload);
+    return this.http.post(`${this.ROOT_URL}${uri}`, payload);
   }
 
   patch(uri: string, payload: Object) {
-    return this.http.patch(`${this.ROOT_URL}/${uri}`, payload);
+    return this.http.patch(`${this.ROOT_URL}${uri}`, payload);
   }
 
   delete(uri: string) {
-    return this.http.delete(`${this.ROOT_URL}/${uri}`);
+    return this.http.delete(`${this.ROOT_URL}${uri}`);
   }
 
   login(email: string, password: string) {
-    return this.http.post(`${this.ROOT_URL}/users/login`, {
+    return this.http.post(`${this.ROOT_URL}users/login`, {
       email,
       password
     }, {
@@ -38,7 +38,7 @@ export class WebRequestService {
   }
 
   register(email: string, password: string) {
-    return this.http.post(`${this.ROOT_URL}/users`, {
+    return this.http.post(`${this.ROOT_URL}users`, {
       email,
       password
     }, {
