@@ -9,6 +9,8 @@ const { List, Task, User } = require('./db/models');
 
 const jwt = require('jsonwebtoken');
 
+const port = proces.env.PORT || 8080;
+
 /* MIDDLEWARE  */
 
 app.use(bodyParser.json());
@@ -284,6 +286,6 @@ let deleteTasksFromList = (_listId) => {
     })
 }
 
-app.listen(3000, () => {
-    console.log('Listening on port 3000...');
+app.listen(port, () => {
+    console.log('Listening...');
 });
