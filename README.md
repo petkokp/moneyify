@@ -10,6 +10,6 @@ Go to `api` and run `node app.js` to start the server.
 
 Go to `moneyify` and run `ng serve` to build and serve the app.
 
-# Github Pages
+# Firebase hosting
 
-You can see the app running on `moneyify.github.io`.
+You can see some of the frontend running on `https://moneyify-575aa.web.app/`.
